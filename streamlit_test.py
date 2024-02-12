@@ -5,13 +5,13 @@ import textwrap
 from PIL import Image
 import numpy as np
 import google.generativeai as genai
-from IPython.display import display
-from IPython.display import Markdown
+# from IPython.display import display
+# from IPython.display import Markdown
 
 #functions
-def to_markdown(text):
-  text = text.replace('•', '  *')
-  return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
+# def to_markdown(text):
+#   text = text.replace('•', '  *')
+#   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 
 def ui_spacer(n=2, line=False, next_n=0):
@@ -80,7 +80,7 @@ def genai():
     
 #Streamlit UI    
 
-st.set_page_config(page_title ="SQL_Gen", initial_sidebar_state = "expanded")
+st.set_page_config(page_title ="SQL_Gen", page_icon = "📊", initial_sidebar_state = "auto")
 
 with st.sidebar:
     ui_info()
