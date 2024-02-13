@@ -55,7 +55,7 @@ with st.sidebar:
         * Google Gemini-Pro API
         """)  
         
-st.title("**Welcome to SQL-Gen!**")
+st.title("**Welcome to SQL_Gen!**")
 
 st.write('''
 
