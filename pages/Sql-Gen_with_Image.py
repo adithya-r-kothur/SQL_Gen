@@ -53,8 +53,6 @@ with st.sidebar:
         
 st.title("SQL_Gen")
  
-
-
 st.write("image page")
 
 def image():
