@@ -5,6 +5,12 @@ from PIL import Image
 import numpy as np
 import google.generativeai as genai
 
+
+genai.configure(api_key="AIzaSyD0oWke6DY6zHgq6jOw_CtG2aTqK8pAQcA")
+
+model_text = genai.GenerativeModel('gemini-pro')
+model_vis = genai.GenerativeModel('gemini-pro-vision')
+
 def ui_spacer(n=2, line=False, next_n=0):
 	for _ in range(n):
 		st.write('')
@@ -37,14 +43,17 @@ st.set_page_config(page_title ="SQL_Gen", page_icon = "📊", initial_sidebar_st
 with st.sidebar:
     
     st.sidebar.success("Select a page above.")
-    ui_info()
-
+    
+    with st.expander("About"):
+        ui_info()
+    
     with st.expander("Advanced"):
         st.markdown("""
         * Temperature:
         * Token length:
         """) 
 
+	
     with st.expander("Tech used"):
         st.markdown("""
         * Streamlit 
@@ -52,18 +61,6 @@ with st.sidebar:
         """)  
         
 st.title("SQL_Gen")
-
-
-
-
-genai.configure(api_key="AIzaSyD0oWke6DY6zHgq6jOw_CtG2aTqK8pAQcA")
-
-model_text = genai.GenerativeModel('gemini-pro')
-model_vis = genai.GenerativeModel('gemini-pro-vision')
-
-
-
-
 
 def genai_text():
     st.write("Please enter the written details of the sql schema with all the details")

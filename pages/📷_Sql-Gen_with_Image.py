@@ -37,7 +37,9 @@ st.set_page_config(page_title ="SQL_Gen", page_icon = "📊", initial_sidebar_st
 with st.sidebar:
     
     st.sidebar.success("Select a page above.")
-    ui_info()
+    
+    with st.expander("About"):
+        ui_info()
 
     with st.expander("Advanced"):
         st.markdown("""
@@ -52,8 +54,7 @@ with st.sidebar:
         """)  
         
 st.title("SQL_Gen")
- 
-st.write("image page")
+
 
 def image():
         img_file_buffer = st.camera_input("Take picture of Schema Diagram")
