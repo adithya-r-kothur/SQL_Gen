@@ -36,30 +36,6 @@ def ui_info():
 	ui_spacer(1)
 	st.markdown('Source code can be found [here](https://github.com/adithya-r-kothur).')
  
-if 'clicked' not in st.session_state:
-    st.session_state.clicked = False
-
-def click_button():
-    st.session_state.clicked = True
-     
-  
-      
-#############################################################################     
-#Gemini-pro API Stuff 
-
-genai.configure(api_key="AIzaSyD0oWke6DY6zHgq6jOw_CtG2aTqK8pAQcA")
-
-model_text = genai.GenerativeModel('gemini-pro')
-model_vis = genai.GenerativeModel('gemini-pro-vision')
-
-#############################################################################
-#The main logic  
-
-            
- 
-#############################################################################  
-#Streamlit UI    
-
 st.set_page_config(page_title ="SQL_Gen", page_icon = "📊", initial_sidebar_state = "auto")
 
 with st.sidebar:
@@ -81,9 +57,6 @@ with st.sidebar:
         
 st.title("SQL_Gen")
 
-##############################################################################
-
-#with image 
 
 
 
