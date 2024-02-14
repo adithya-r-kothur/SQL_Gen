@@ -62,7 +62,7 @@ st.title("**Welcome to SQL_Gen!**")
 
 st.write('''
 
-Press on top left corner to select a page.
+**Press on top left corner to select a page.**
 
 ## Image Page:
 
