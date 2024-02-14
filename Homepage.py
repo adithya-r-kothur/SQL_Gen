@@ -30,24 +30,27 @@ def ui_info():
 		Thank you for your interest in my application.
 		Please be aware that this is only a Proof of Concept system
 		and may contain bugs or unfinished features.
-		If you like this app you can ❤️ [follow me](https://www.linkedin.com/in/adithya-r-kothur/)
+		If you like this app you can  [follow me](https://www.linkedin.com/in/adithya-r-kothur/)
 		on Linkedin for news and updates.
 		""")
 	ui_spacer(1)
 	st.markdown('Source code can be found [here](https://github.com/adithya-r-kothur).')
  
-st.set_page_config(page_title ="SQL_Gen", page_icon = "📊", initial_sidebar_state = "auto")
+st.set_page_config(page_title ="SQL_Gen", page_icon = "📊", initial_sidebar_state = "expanded")
 
 with st.sidebar:
     
     st.sidebar.success("Select a page above.")
-    ui_info()
-
+    
+    with st.expander("About"):
+        ui_info()
+    
     with st.expander("Advanced"):
         st.markdown("""
         * Temperature:
         * Token length:
         """) 
+       
 
     with st.expander("Tech used"):
         st.markdown("""
