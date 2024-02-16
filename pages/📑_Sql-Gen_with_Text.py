@@ -67,7 +67,11 @@ def genai_text():
     
     schema_details = st.text_input("Enter the details of the schema") 
     
-    text_prompt ='''Hello Adithya'''
+    text_prompt ='''given the details of sql schema and conditions for the query 
+ 			Generate an optimal SQL query that effectively retrieves the desired data.
+  			Ensure the resulting query adheres to standard SQL syntax and is well-suited to the structure identified in the 
+  			image along with the specified conditions.
+			'''
     
     query = st.text_input('Enter the conditons of the sql query')    
     if(len(schema_details)>0  and len(query)>0):
