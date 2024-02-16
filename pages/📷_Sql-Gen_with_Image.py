@@ -60,8 +60,10 @@ def image():
         img_file_buffer = st.camera_input("Take picture of Schema Diagram")
         if img_file_buffer is not None:
             img = Image.open(img_file_buffer)   
-            response = model_vis.generate_content(['''explain what is this and write a small 
-                                                   description about it ''',img])
+            response = model_vis.generate_content(['''Given an image of a SQL database schema, analyze and extract relevant details such as tables, columns, relationships, 
+                and any notable constraints or keys present in the schema. Provide a comprehensive understanding of the structure 
+                depicted in the image.
+                ''',img])
             st.write("The summary of the Schema is:")
             st.write(response.text)
             return response.text  
@@ -70,8 +72,10 @@ def upload():
     uplaod_img = st.file_uploader("Upload a Schema Diagram of the tables if you did'nt click a pic", type=["jpg", "png", "jpeg"])
     if uplaod_img is not None:
         img_x = Image.open(uplaod_img)
-        responce = model_vis.generate_content(['''explain what is this and write a small 
-                                                   description about it ''',img_x])
+        responce = model_vis.generate_content(['''Given an image of a SQL database schema, analyze and extract relevant details such as tables, columns, relationships, 
+            and any notable constraints or keys present in the schema. Provide a comprehensive understanding of the structure 
+            depicted in the image.
+            ''',img_x])
         st.write("The summary of the Schema is:")
         st.write(responce.text)
         return responce.text
@@ -104,7 +108,11 @@ def genai_img():
             
     else:
         sql_query = st.text_input('Enter the conditons for the sql query')
-        img_prompt ='''Hello Adithya'''
+        img_prompt ='''given the details of sql schema and conditions for the query 
+            Generate an optimal SQL query that effectively retrieves the desired data.
+            Ensure the resulting query adheres to standard SQL syntax and is well-suited to the structure identified in the 
+            image along with the specified conditions.
+            '''
         if(len(text_from_image)>0):
             response = model_text.generate_content(img_prompt+text_from_image + sql_query)
         
